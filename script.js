@@ -1,4 +1,4 @@
-const s = window.BUD_STROY;
+const s = siteData;
 const safe = (v) => String(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 document.getElementById('services-list').innerHTML = s.services.map(x => `<article class="card"><div class="icon">${safe(x.icon)}</div><h3>${safe(x.title)}</h3><p>${safe(x.description)}</p></article>`).join('');
 document.getElementById('gallery').innerHTML = s.photos.length ? s.photos.map((x,i)=>`<figure class="photo"><img src="${encodeURI(x.image)}" alt="${safe(x.title)}" loading="lazy"><figcaption>${safe(x.title)}</figcaption></figure>`).join('') : `<div class="gallery-empty"><span>▧</span><h3>Галерея готова для ваших фотографий</h3><p>Добавьте снимки в папку images и укажите их в data.js.</p></div>`;
