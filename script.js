@@ -27,3 +27,4 @@ document.getElementById("price-list").innerHTML =
 document.getElementById("gallery").innerHTML = "";
 
 document.getElementById("year").textContent =
+new Date().getFullYear();
